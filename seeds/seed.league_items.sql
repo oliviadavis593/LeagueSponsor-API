@@ -1,0 +1,22 @@
+INSERT INTO leagues (league_name, website, latitude, longitude, price)
+VALUES  
+    ('St. Louis Cardinals', 'https://www.mlb.com/cardinals', 55, 33, 4500),
+    ('Atlanta Braves', 'https://www.mlb.com/braves', 11, 14, 1400),
+    ('Miami Marlins', 'https://www.mlb.com/marlins', 13, 14, 800),
+    ('New York Mets', 'https://www.mlb.com/mets', 13, 15, 2500),
+    ('Philadelphia Phillies', 'https://www.mlb.com/phillies', 16, 17, 3500),
+    ('Washington Nationals', 'https://www.mlb.com/nationals', 9, 4, 1200),
+    ('Chicago Cubs', 'https://www.mlb.com/cubs', 15, 16, 1750),
+    ('Cincinnati Reds', 'https://www.mlb.com/reds', 17, 19, 400),
+    ('Milwaukee Brewers', 'https://www.mlb.com/brewers', 20, 25, 850), 
+    ('Pittsburgh Pirates', 'https://www.mlb.com/pirates', 13, 14, 1250),
+    ('Arizona Diamondbacks', 'https://www.mlb.com/dbacks', 14, 17, 1150),
+    ('Colorado Rockies', 'https://www.mlb.com/rockies', 14, 16, 450),
+    ('Los Angeles Dodgers', 'https://www.mlb.com/dodgers', 17,19, 750),
+    ('San Diego Padres', 'https://www.mlb.com/padres', 17, 19, 1120),
+    ('San Francisco Giants', 'https://www.mlb.com/giants', 14, 15, 1350),
+    ('Baltimore Orioles', 'https://www.mlb.com/orioles', 14, 17, 770),
+    ('Cleveland Indians', 'https://www.mlb.com/indians', 13, 15, 850),
+    ('Boston Red Sox', 'https://www.mlb.com/redsox', 11, 14, 1200),
+    ('New York Yankees', 'https://www.mlb.com/yankees', 15, 16, 2500),
+    ('Tampa Bay Rays', 'https://www.mlb.com/rays', 11, 14, 3500)
