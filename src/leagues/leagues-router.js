@@ -9,6 +9,7 @@ const serializeLeague = league => ({
     id: league.id, 
     league_name: league.league_name,  
     website: league.website, 
+    location: league.location, 
     latitude: league.latitude, 
     longitude: league.longitude, 
     price: league.price, 
@@ -36,8 +37,8 @@ leaguesRouter
         }
     })
     .post(jsonParser, (req, res, next) => {
-        const { league_name, website, latitude, longitude, price } = req.body;
-        const newLeague = { league_name, website, latitude, longitude, price };
+        const { league_name, website, location, latitude, longitude, price } = req.body;
+        const newLeague = { league_name, website, location, latitude, longitude, price };
 
         LeaguesService.createLeague(
             req.app.get('db'),

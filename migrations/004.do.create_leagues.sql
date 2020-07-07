@@ -1,0 +1,2 @@
+ALTER TABLE leagues
+ADD COLUMN location TEXT;
