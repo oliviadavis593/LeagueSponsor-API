@@ -53,7 +53,7 @@ const LeaguesService = {
             })
     }, 
     getById(knex, id) {
-        return knex('').select('*').where('id', id).first();
+        return knex('leagues').select('*').where('id', id).first();
     }
  }
  module.exports = LeaguesService;

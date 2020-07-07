@@ -7,8 +7,7 @@ const jsonParser = express.json();
 
 const serializeLeague = league => ({
     id: league.id, 
-    league_name: league.league_name, 
-    location: league.location, 
+    league_name: league.league_name,  
     website: league.website, 
     latitude: league.latitude, 
     longitude: league.longitude, 
@@ -37,8 +36,8 @@ leaguesRouter
         }
     })
     .post(jsonParser, (req, res, next) => {
-        const { league_name, location, website, latitude, longitude, price } = req.body;
-        const newLeague = { league_name, location, website, latitude, longitude, price };
+        const { league_name, website, latitude, longitude, price } = req.body;
+        const newLeague = { league_name, website, latitude, longitude, price };
 
         LeaguesService.createLeague(
             req.app.get('db'),
