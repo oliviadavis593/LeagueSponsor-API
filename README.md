@@ -31,7 +31,7 @@
 }
 ```
 
-### GET /api/leagues
+### GET /api/leagues (coming from the /dashboard)
 ```javascript
 //req.body
 {
@@ -40,6 +40,24 @@
     latitude: Number, 
     longitude: Number, 
     price: Number
+}
+
+//res.body
+{
+    league_name: String, 
+    location: String, 
+    price: Number
+}
+```
+
+### GET /api/leagues (coming from the /sponsor)
+```javascript
+//req.body
+{
+    budget: Number, 
+    latitude: Number, 
+    longitude: Number, 
+    Radius: Number
 }
 
 //res.body
