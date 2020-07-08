@@ -1,17 +1,54 @@
-# Express Boilerplate!
+# LeagueSponsor 🏆
 
-This is a boilerplate project used for starting new projects!
+-  [LeagueSponsor](https://leaguesponsor.oliviadavis593.vercel.app/) is a fully responsive full-stack React application designed for the LeagueSide company tech interview! The Frontend repo can be found [here](https://github.com/oliviadavis593/LeagueSponsor).
 
-## Set up
+## API Overview 
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+```
+/api
+.
+├── /leagues
+│   └── GET
+│   └── POST   
+```
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+### POST /api/leagues
+```javascript
+//req.body
+{
+    league_name: String, 
+    location: String, 
+    latitude: Number, 
+    longitude: Number, 
+    price: Number
+}
+
+//res.body
+{
+    league_name: String, 
+    location: String, 
+    price: Number
+}
+```
+
+### GET /api/leagues
+```javascript
+//req.body
+{
+    league_name: String, 
+    location: String, 
+    latitude: Number, 
+    longitude: Number, 
+    price: Number
+}
+
+//res.body
+{
+    league_name: String, 
+    location: String, 
+    price: Number
+}
+```
 
 ## Scripts
 
@@ -21,6 +58,14 @@ Start nodemon for the application `npm run dev`
 
 Run the tests `npm test`
 
-## Deploying
+# Tech Used 🖥
+**Back-End**
+- [Node](https://nodejs.org/en/) (JavaScript runtime environment)
+- [Express](https://expressjs.com/) (web application framework for Node.js)
+- [PostgreSQL](https://www.postgresql.org/) (Relational Database Management System)
 
-When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+**Testing and Deployment**
+- [Enzyme](https://github.com/enzymejs/enzyme) (Front-End Framework Testing)
+- [Mocha](https://mochajs.org/) (Back-End Framework Testing)
+- [Chai](https://www.chaijs.com/) (Assertion Library For Node)
+- [Heroku](https://www.heroku.com/platform) (Cloud PaaS)
