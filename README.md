@@ -76,7 +76,7 @@ Start nodemon for the application `npm run dev`
 
 Run the tests `npm test`
 
-# Tech Used 🖥
+## Tech Used 🖥
 **Back-End**
 - [Node](https://nodejs.org/en/) (JavaScript runtime environment)
 - [Express](https://expressjs.com/) (web application framework for Node.js)
