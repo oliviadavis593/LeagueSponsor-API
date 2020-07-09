@@ -18,51 +18,48 @@ const serializeLeague = league => ({
 leaguesRouter
     .route('/')
     .get((req, res, next) => {
-       const knexInstance = req.app.get('db')
-       const { latitude, longitude, budget, radius } = req.params; 
+        const knexInstance = req.app.get('db')
+        const { latitude, longitude, budget, radius } = req.query; 
 
-       if (!latitude || !longitude || !budget) {
-           return res.status(400).json({ error: 'Insuffecient parameters provided!' })
-       } else {
-           /*
-            This is a random assumption of what 5 miles radius might be
-           */
-          const ifWithinFiveMiles = (league) => {
-              if (radius) {
-                  return league.latitude - latitude <= radius && league.longitude - longitude <= radius;
-              } else {
-                return (
-                    league.latitude - latitude >= 2 &&
-                    league.latitude - latitude <= 4 &&
-                    league.longitude - longitude >= 2 &&
-                    league.longitude - longitude <= 4
-                );
-              }
-          };
-          const withinRadius = leagues.filter(ifWithinFiveMiles).sort((a, b) =>
-            a.price > b.price ? 1 : -1,
-          );
-          let sum = 0; 
-          const withinBudget = [];
-          withinRadius.forEach((league) => {
-              if (sum + league.price > budget || league.price > budget) {
-                  return;
-              }
-              else {
-                  withinBudget.push(league);
-                  sum += league.price; 
-              }
-          });
-          return res.status(200).json(withinBudget)
-       }
+        LeaguesService.getAllLeagues(knexInstance)
+            .then(leagues => {
+     
+
+        if (!latitude || !longitude || !budget || !radius) {
+            return res.status(200).json(leagues)
+        } else {
+            /*
+             This is a random assumption of what 5 miles radius might be
+            */
+           const isWithinRadius = (league) => {
+                   return league.latitude - latitude <= radius && league.longitude - longitude <= radius;
+           };
+           const withinRadius = leagues.filter(isWithinRadius).sort((a, b) =>
+             a.price > b.price ? 1 : -1,
+           );
+           let sum = 0; 
+           const withinBudget = [];
+           withinRadius.forEach((league) => {
+               if (sum + league.price > budget || league.price > budget) {
+                   return;
+               }
+               else {
+                   withinBudget.push(league);
+                   sum += league.price; 
+               }
+           });
+            return res.status(200).json(withinBudget)
+        
+        }
+        
     })
+})
+    
     .post(jsonParser, (req, res, next) => {
-        const { league_name, website, location, latitude, longitude, price } = req.body;
-        const newLeague = { league_name, website, location, latitude, longitude, price };
 
         LeaguesService.createLeague(
             req.app.get('db'),
-            newLeague
+            req.body
         )
             .then(league => {
                 res
@@ -72,5 +69,6 @@ leaguesRouter
             })
             .catch(next)
     })
+
 
 module.exports = leaguesRouter; 

@@ -11,3 +11,23 @@
 {"message":"Cannot read property 'insert' of undefined","level":"error"}
 {"message":"Cannot read property 'select' of undefined","level":"error"}
 {"message":"Cannot read property 'select' of undefined","level":"error"}
+{"message":"Cannot read property 'select' of undefined","level":"error"}
+{"message":"Cannot read property 'select' of undefined","level":"error"}
+{"message":"Cannot read property 'select' of undefined","level":"error"}
+{"message":"Cannot read property 'select' of undefined","level":"error"}
+{"message":"Cannot read property 'insert' of undefined","level":"error"}
+{"message":"Cannot read property 'select' of undefined","level":"error"}
+{"message":"Cannot read property 'select' of undefined","level":"error"}
+{"message":"Cannot read property 'insert' of undefined","level":"error"}
+{"message":"insert into \"leagues\" (\"latitude\", \"league_name\", \"location\", \"longitude\", \"price\", \"website\") values ($1, $2, DEFAULT, $3, $4, $5) returning * - column \"location\" of relation \"leagues\" does not exist","level":"error"}
+{"message":"insert into \"leagues\" (\"latitude\", \"league_name\", \"location\", \"longitude\", \"price\", \"website\") values ($1, $2, $3, $4, $5, $6) returning * - column \"location\" of relation \"leagues\" does not exist","level":"error"}
+{"message":"Cannot set headers after they are sent to the client","level":"error"}
+{"message":"Cannot set headers after they are sent to the client","level":"error"}
+{"message":"Cannot set headers after they are sent to the client","level":"error"}
+{"message":"knexInstance is not defined","level":"error"}
+{"message":"serializeLeague is not defined","level":"error"}
+{"message":"serializeLeague is not defined","level":"error"}
+{"message":"serializeLeague is not defined","level":"error"}
+{"message":"serializeLeague is not defined","level":"error"}
+{"message":"Cannot destructure property `latitude` of 'undefined' or 'null'.","level":"error"}
+{"message":"Cannot destructure property `latitude` of 'undefined' or 'null'.","level":"error"}

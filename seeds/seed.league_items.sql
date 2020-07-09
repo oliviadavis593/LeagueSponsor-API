@@ -19,4 +19,4 @@ VALUES
     ('Cleveland Indians', 'https://www.mlb.com/indians', 13, 15, 850),
     ('Boston Red Sox', 'https://www.mlb.com/redsox', 11, 14, 1200),
     ('New York Yankees', 'https://www.mlb.com/yankees', 15, 16, 2500),
-    ('Tampa Bay Rays', 'https://www.mlb.com/rays', 11, 14, 3500)
+    ('Tampa Bay Rays', 'https://www.mlb.com/rays', 11, 14, 3500);

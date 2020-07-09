@@ -12,7 +12,7 @@ describe('Leagues Endpoints', function() {
             client: 'pg',
             connection: process.env.TEST_DATABASE_URL, 
         })
-        app.set()
+        app.set('db', db)
     })
 
     //disconnects from the db so tests don't 'hang'
@@ -49,11 +49,12 @@ describe('Leagues Endpoints', function() {
         })
     }) 
 
-    describe.skip('POST /api/leagues', () => {
+    describe('POST /api/leagues', () => {
         it(`creates a league, responding with 201 and the new league`, () => {
             const newLeague = {
                 league_name: 'Test league_name',
                 website: 'Test league website',
+                location: 'Test location',
                 latitude: 13, 
                 longitude: 15,
                 price: 3000
