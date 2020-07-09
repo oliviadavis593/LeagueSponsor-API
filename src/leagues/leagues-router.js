@@ -53,22 +53,21 @@ leaguesRouter
         }
         
     })
-})
-    
-    .post(jsonParser, (req, res, next) => {
+})   
+.post(jsonParser, (req, res, next) => {
 
-        LeaguesService.createLeague(
-            req.app.get('db'),
-            req.body
-        )
-            .then(league => {
-                res
-                    .status(201)
-                    .location(path.posix.join(req.originalUrl + `/${league.id}`))
-                    .json(serializeLeague(league))
-            })
-            .catch(next)
-    })
+    LeaguesService.createLeague(
+        req.app.get('db'),
+        req.body
+    )
+        .then(league => {
+            res
+                .status(201)
+                .location(path.posix.join(req.originalUrl + `/${league.id}`))
+                .json(serializeLeague(league))
+        })
+        .catch(next)
+})
 
 
 module.exports = leaguesRouter; 
