@@ -18,7 +18,7 @@ const serializeLeague = league => ({
 leaguesRouter
     .route('/')
     .get((req, res, next) => {
-        const knexInstance = req.app.get('db')
+        const knexInstance = req.app.get('db');
         const { latitude, longitude, budget, radius } = req.query; 
 
         LeaguesService.getAllLeagues(knexInstance)
@@ -26,7 +26,7 @@ leaguesRouter
      
 
         if (!latitude || !longitude || !budget || !radius) {
-            return res.status(200).json(leagues)
+            return res.status(200).json(leagues);
         } else {
             /*
              This is a random assumption of what 5 miles radius might be
@@ -48,7 +48,7 @@ leaguesRouter
                    sum += league.price; 
                }
            });
-            return res.status(200).json(withinBudget)
+            return res.status(200).json(withinBudget);
         
         }
         
